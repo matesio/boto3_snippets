@@ -24,8 +24,8 @@ def describe_ebEnvironments(applicationName, environmentName ):
 def describe_ebEvents(environmentName):
     try:
         return eb.describe_events( EnvironmentName=environmentName)
-    except:
-        print "something went wrong"
+    except ClientError as e:
+        pprint.pprint(e.response) 
 
 def instaneHealth(environmentName):
     try:
