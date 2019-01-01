@@ -12,7 +12,7 @@ def describe_ebEnvironments(applicationName, environmentName ):
     try:
        return eb.describe_environments(
         ApplicationName=applicationName,
-        #   VersionLabel='code-pipeline-1546076515583-AppAndMerge-d0e46138-4431-42f9-9334-435c310e8c10',
+        #   VersionLabel='',
         #   IncludedDeletedBackTo=datetime(2015, 1, 1),
         EnvironmentNames=[
             environmentName
@@ -37,6 +37,6 @@ def instaneHealth(environmentName):
         )
     except ClientError as e:
         pprint.pprint(e.response) 
-#pprint.pprint (describe_ebEnvironments(applicationName,environmentName))
+pprint.pprint (describe_ebEnvironments(applicationName,environmentName))
 pprint.pprint (describe_ebEvents (environmentName))
 pprint.pprint (instaneHealth(environmentName))
